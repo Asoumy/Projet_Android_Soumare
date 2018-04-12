@@ -1,0 +1,11 @@
+<resources>
+    <string name="Quit">Quitter</string>
+    <string name="hintEditText">Summoner Name</string>
+    <string name="menu_principal">Menu Principal</string>
+    <string name="statistiques">Statistiques</string>
+    <string name="contact">Contact</string>
+    <string name="apropos">A Propos</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <string name="rechercher">rechercher</string>
+</resources>

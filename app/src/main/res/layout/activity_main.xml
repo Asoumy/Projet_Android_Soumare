@@ -1,0 +1,60 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_search"
+    tools:context="com.source.LOLSN.MainActivity"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_marginTop="40dp"
+        android:layout_width="fill_parent"
+        android:layout_height="250dp"
+        android:src="@drawable/lol_bg" />
+
+
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="15dp"
+    android:layout_gravity="center_horizontal">
+
+    <!-- search label -->
+    <EditText
+        android:id="@+id/input_Summoner"
+        android:layout_width="222dp"
+        android:layout_height="match_parent"
+        android:background="@color/iron"
+        android:hint="@string/hintEditText"
+        android:singleLine="true"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"/>
+
+    <ProgressBar
+        android:id="@+id/pb_search"
+        android:visibility="invisible"
+        android:layout_marginLeft="10dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content" />
+
+</LinearLayout>
+    <Button
+        android:id="@+id/btn_search"
+        android:text="Lancer la recherche"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#000"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textInputLayout"
+        android:layout_marginTop="10dp" />
+
+    <ListView
+        android:id="@+id/lv_recent"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp" />
+
+
+</LinearLayout>

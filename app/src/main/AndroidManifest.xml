@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.hsoumare.learnig_android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="LolSN"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.source.LOLSN.MainActivity"
+            android:label="LolSN-APP">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.source.LOLSN.LoginActivity"
+            android:theme="@style/AppTheme.Dark" />
+        <activity
+            android:name="com.source.LOLSN.SignupActivity"
+            android:theme="@style/AppTheme.Dark" />
+        <activity
+            android:name="com.source.LOLSN.HistoriqueActivity"></activity>
+    </application>
+
+</manifest>
