@@ -48,8 +48,8 @@ public class HistoriqueActivity extends AppCompatActivity implements NavigationV
         super.onCreate ( savedInstanceState );
         setContentView ( R.layout.activity_historique );
 
-        queue = MySingleton.getInstance(this).getRequestQueue();
-        request = new ApiRequest(queue, this);
+//        queue = MySingleton.getInstance(this).getRequestQueue();
+//        request = new ApiRequest(queue, this);
 
 
         Intent intent = getIntent();
@@ -87,22 +87,22 @@ public class HistoriqueActivity extends AppCompatActivity implements NavigationV
                 toggle.syncState();
                 navigationView.setNavigationItemSelectedListener(this);
 
-        request.getHistoryMatches(65218394, new ApiRequest.HistoryCallback() {
-            @Override
-            public void onSuccess(List<MatchEntity> matches) {
-                                Log.d("APP", "MATCH = " + matches.toString());
-                            }
-
-            @Override
-            public void noMatch(String message) {
-                                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-                            }
-
-            @Override
-            public void onError(String message) {
-                                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-                            }
-        });
+//        request.getHistoryMatches(65218394, new ApiRequest.HistoryCallback() {
+//            @Override
+//            public void onSuccess(List<MatchEntity> matches) {
+//                                Log.d("APP", "MATCH = " + matches.toString());
+//                            }
+//
+//            @Override
+//            public void noMatch(String message) {
+//                                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+//                            }
+//
+//            @Override
+//            public void onError(String message) {
+//                                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+//                            }
+//        });
         recyclerView = (RecyclerView) findViewById(R.id.rv_match);
 
         List<String> data = new ArrayList<>();
