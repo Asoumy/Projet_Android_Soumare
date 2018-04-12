@@ -9,7 +9,7 @@
     <ImageView
         android:layout_marginTop="40dp"
         android:layout_width="fill_parent"
-        android:layout_height="250dp"
+        android:layout_height="220dp"
         android:src="@drawable/lol_bg" />
 
 
@@ -28,8 +28,8 @@
         android:background="@color/iron"
         android:hint="@string/hintEditText"
         android:singleLine="true"
-        android:textColorHint="@color/white"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
 
     <ProgressBar
         android:id="@+id/pb_search"
@@ -55,6 +55,7 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp" />
+
 
 
 </LinearLayout>

@@ -34,6 +34,12 @@ public class HistoriqueActivity extends AppCompatActivity implements NavigationV
 
     private String playerName;
     private long playerId;
+    private long playerprofileIconId;
+    private long playersummonerLevel;
+    private long playeraccountId;
+    private long playerrevisionDate;
+
+
     private TextView test;
     private Toolbar toolbar;
     private DrawerLayout mDrawerLayout;
@@ -43,14 +49,11 @@ public class HistoriqueActivity extends AppCompatActivity implements NavigationV
     private ApiRequest request;
     private RequestQueue queue;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate ( savedInstanceState );
         setContentView ( R.layout.activity_historique );
-
-//        queue = MySingleton.getInstance(this).getRequestQueue();
-//        request = new ApiRequest(queue, this);
-
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras ();
@@ -59,12 +62,19 @@ public class HistoriqueActivity extends AppCompatActivity implements NavigationV
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView = (NavigationView) findViewById(R.id.navigation_view);
         setSupportActionBar(toolbar);
+        test= findViewById ( R.id.test );
 
-        if (extras.getString ( "NAME" ) != null && extras.getLong ( "ID" )>0){
+
+        if (extras.getString ( "NAME" ) != null && extras.getLong ( "ID" )>0 && extras.getLong ( "PROFILEICONID" )>0 && extras.getLong ( "SUMMONERLEVEL" )>0 && extras.getLong ( "ACCOUNTID" )>0 && extras.getLong ( "REVISIONDATE" )>0){
 
             playerName=extras.getString ( "NAME" );
             playerId=extras.getLong ( "ID" );
-            setTitle(playerName);
+            playerprofileIconId=extras.getLong ( "PROFILEICONID" );
+            playersummonerLevel=extras.getLong ( "SUMMONERLEVEL" );
+            playeraccountId=extras.getLong ( "ACCOUNTID" );
+            playerrevisionDate=extras.getLong ( "REVISIONDATE" );
+
+
         }else{
 
         }
@@ -87,28 +97,16 @@ public class HistoriqueActivity extends AppCompatActivity implements NavigationV
                 toggle.syncState();
                 navigationView.setNavigationItemSelectedListener(this);
 
-//        request.getHistoryMatches(65218394, new ApiRequest.HistoryCallback() {
-//            @Override
-//            public void onSuccess(List<MatchEntity> matches) {
-//                                Log.d("APP", "MATCH = " + matches.toString());
-//                            }
-//
-//            @Override
-//            public void noMatch(String message) {
-//                                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-//                            }
-//
-//            @Override
-//            public void onError(String message) {
-//                                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-//                            }
-//        });
+
         recyclerView = (RecyclerView) findViewById(R.id.rv_match);
 
         List<String> data = new ArrayList<>();
-        data.add("premiere donnée");
-        data.add("seconde donnée");
-        data.add("troisieme donnée");
+        data.add("NAME: "+String.valueOf ( playerName ));
+        data.add("ID: "+String.valueOf ( playerId ));
+        data.add("PROFILEICONID: "+String.valueOf ( playerprofileIconId ));
+        data.add("SUMMONERLEVEL: "+String.valueOf ( playersummonerLevel ));
+        data.add("ACCOUNTID: "+String.valueOf ( playeraccountId ));
+        data.add("REVISIONDATE: "+String.valueOf ( playerrevisionDate ));
 
         recyclerView.setLayoutManager ( new LinearLayoutManager ( this ) );
         recyclerView.setHasFixedSize ( true );
@@ -142,7 +140,6 @@ public class HistoriqueActivity extends AppCompatActivity implements NavigationV
                         case R.id.stats :
                                 Toast.makeText(getApplicationContext(), "Statistiques", Toast.LENGTH_SHORT).show();
                                 return true;
-
                             }
 
                         return true;

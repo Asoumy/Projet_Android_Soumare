@@ -61,13 +61,19 @@ public class MainActivity extends AppCompatActivity {
 
                                 request.checkPlayerName ( search, new ApiRequest.CheckPlayerCallback () {
                                     @Override
-                                    public void onSuccess(String name, long id) {
+                                    public void onSuccess(String name,long id,long profileIconId,long summonerLevel, long accountId,long revisionDate) {
 
                                         pb_Loader.setVisibility ( View.INVISIBLE );
                                         Intent intent = new Intent ( getApplicationContext (),HistoriqueActivity.class );
                                         Bundle extras = new Bundle ();
                                         extras.putString ( "NAME", name);
                                         extras.putLong ( "ID", id);
+                                        extras.putLong ( "PROFILEICONID", profileIconId);
+                                        extras.putLong ( "SUMMONERLEVEL", summonerLevel);
+                                        extras.putLong ( "ACCOUNTID", accountId);
+                                        extras.putLong ( "REVISIONDATE", revisionDate);
+
+
                                         intent.putExtras ( extras );
                                         startActivity ( intent );
                                     }
